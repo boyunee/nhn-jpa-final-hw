@@ -22,10 +22,10 @@ public class RootConfig {
 //        dataSource.setUsername("sa");
 //        dataSource.setPassword("");
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/nhn_academy_30?");
+        dataSource.setUrl("jdbc:mysql://133.186.241.167:3306/nhn_academy_30");
         dataSource.setUsername("nhn_academy_30");
         dataSource.setPassword("dY)ydS7rUqApRwzo");
-        dataSource.setDefaultSchema("classpath:/script/schema.sql");
+//        dataSource.setDefaultSchema("schema.sql");
 
         dataSource.setInitialSize(10);
         dataSource.setMaxTotal(10);

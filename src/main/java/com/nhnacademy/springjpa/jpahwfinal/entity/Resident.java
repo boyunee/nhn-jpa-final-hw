@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Temporal;
 
 import javax.persistence.*;
 import java.rmi.UnmarshalException;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class Resident {
     private String genderCode;
 
     @Column(name = "birth_date", nullable = false)
-    private Date birthDate;
+    private LocalDateTime birthDate;
 
     @Column(name = "birth_place_code", nullable = false)
     private String birthPlaceCode;
@@ -40,7 +41,7 @@ public class Resident {
     private String registrationBaseAddress;
 
     @Column(name = "death_date")
-    private Date deathDate;
+    private LocalDateTime deathDate;
 
     @Column(name = "death_place_code")
     private String deathPlaceCode;
