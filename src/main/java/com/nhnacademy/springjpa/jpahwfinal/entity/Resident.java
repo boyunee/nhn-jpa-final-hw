@@ -53,10 +53,14 @@ public class Resident {
     @OneToMany(mappedBy = "resident")
     private List<BirthDeathReportResident> birthDeathReportResidents;
 
-    @OneToMany(mappedBy = "resident")
-    private List<FamilyRelationship> familyRelationships;
 
-    @OneToMany(mappedBy = "resident")
+
+    @OneToMany(mappedBy = "baseResident")
+    private List<FamilyRelationship> baseFamilyRelationships;
+    @OneToMany(mappedBy = "familyResident")
+    private List<FamilyRelationship> FamilyRelationships;
+
+    @OneToMany(mappedBy = "resident",fetch = FetchType.EAGER)
     private List<CertificateIssue> certificateIssues;
 
     @OneToMany(mappedBy = "resident")

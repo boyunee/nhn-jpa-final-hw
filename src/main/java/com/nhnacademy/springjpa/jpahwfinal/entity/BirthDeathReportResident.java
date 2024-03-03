@@ -24,7 +24,7 @@ public class BirthDeathReportResident {
     private String birthDeathTypeCode;
 
     @Id
-    @Column(name = "report_resident_serial_number", nullable = false)
+    @Column(name = "report_resident_serial_number", nullable = false,insertable = false,updatable = false)
     private Integer reportResidentSerialNumber;
 
     @Column(name = "birth_death_report_date", nullable = false)
@@ -45,6 +45,10 @@ public class BirthDeathReportResident {
     @ManyToOne
     @JoinColumn(name = "resident_serial_number" )
     private Resident resident;
+
+    @ManyToOne
+    @JoinColumn(name = "report_resident_serial_number" )
+    private Resident reportResident;
 
 
     @NoArgsConstructor

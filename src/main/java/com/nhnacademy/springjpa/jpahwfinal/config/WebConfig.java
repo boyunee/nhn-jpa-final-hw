@@ -27,7 +27,6 @@ public class WebConfig implements WebMvcConfigurer, ApplicationContextAware, Mes
     private ApplicationContext applicationContext;
     private MessageSource messageSource;
 
-    // TODO #3: ApplicationContextAware, MessageSourceAware 인터페이스 구현 처리
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
@@ -41,7 +40,6 @@ public class WebConfig implements WebMvcConfigurer, ApplicationContextAware, Mes
 
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
-        // TODO #5: ThymeleafViewResolver 등록
         registry.viewResolver(thymeleafViewResolver());
     }
 

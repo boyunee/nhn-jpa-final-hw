@@ -4,7 +4,7 @@
         font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 20px;word-break:normal;}
     .tg th{background-color:#f0f0f0;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
         font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 20px;word-break:normal;}
-    .tg .tg-baqh{text-align:center;vertical-align:top}
+    .tg .tg-baqh{text-align:center;vertical-align:top}zz
 </style>
 <table class="tg" style="undefined;table-layout: fixed; width: 873px">
     <colgroup>
@@ -16,13 +16,15 @@
     </colgroup>
     <thead>
     <tr>
-        <th class="tg-baqh" colspan="5">가족관계증명서<br>( 발급일 : ***, 증명서확인번호 : *** )</th>
+        <th class="tg-baqh" colspan="5" >가족관계증명서
+            <br>( 발급일 : <span th:text ="${certificateIssueDto.certificateIssueDate}"></span>
+            증명서확인번호 : <span th:text ="${certificateIssueDto.getCertificateConfirmationNumber}"></span> )</th>
     </tr>
     </thead>
     <tbody>
     <tr>
         <td class="tg-baqh" colspan="2">등록기준지<br>(본적)</td>
-        <td class="tg-baqh" colspan="3"></td>
+        <td class="tg-baqh" colspan="3" th:text="${baseResidentDto.RegistrationBaseAddress}"></td>
     </tr>
     <tr>
         <td class="tg-baqh">구분</td>
@@ -31,40 +33,24 @@
         <td class="tg-baqh">주민등록번호</td>
         <td class="tg-baqh">성별</td>
     </tr>
-    <tr>
-        <td class="tg-baqh"></td>
-        <td class="tg-baqh"></td>
-        <td class="tg-baqh"></td>
-        <td class="tg-baqh"></td>
-        <td class="tg-baqh"></td>
+    <tr th:object="${baseResidentDto}">
+        <td class="tg-baqh" >본인</td>
+        <td class="tg-baqh" th:text="*{name}"></td>
+        <td class="tg-baqh" th:text="*{birthDate}"></td>
+        <td class="tg-baqh" th:text="*{residentRegistrationNumber}"></td>
+        <td class="tg-baqh" th:text="*{genderCode}"></td>
     </tr>
-    <tr>
-        <td class="tg-baqh"></td>
-        <td class="tg-baqh"></td>
-        <td class="tg-baqh"></td>
-        <td class="tg-baqh"></td>
-        <td class="tg-baqh"></td>
-    </tr>
-    <tr>
-        <td class="tg-baqh"></td>
-        <td class="tg-baqh"></td>
-        <td class="tg-baqh"></td>
-        <td class="tg-baqh"></td>
-        <td class="tg-baqh"></td>
-    </tr>
-    <tr>
-        <td class="tg-baqh"></td>
-        <td class="tg-baqh"></td>
-        <td class="tg-baqh"></td>
-        <td class="tg-baqh"></td>
-        <td class="tg-baqh"></td>
-    </tr>
-    <tr>
-        <td class="tg-baqh"></td>
-        <td class="tg-baqh"></td>
-        <td class="tg-baqh"></td>
-        <td class="tg-baqh"></td>
-        <td class="tg-baqh"></td>
+    <tr th:each="familyRelationship:${familyRelationsips}" >
+        <td class="tg-baqh" th:text="*{familyRelationship.familyRelationshipCode}"></td>
+        <td class="tg-baqh" ><span th:each="resident : ${familyRelationship.familyResident}" th:text="${resident.name}"></span></td>
+        <td class="tg-baqh" ><span th:each="resident : ${familyRelationship.familyResident}" th:text="${resident.birthDate}"></span></td>
+        <td class="tg-baqh" ><span th:each="resident : ${familyRelationship.familyResident}" th:text="${resident.residentRegistrationNumber}"></span></td>
+        <td class="tg-baqh" ><span th:each="resident : ${familyRelationship.familyResident}" th:text="${resident.genderCode}"></span></td>
     </tr>
     </tbody>
+
 </table>
+
+</br>
+</br>
+<a href="/">주민목록</a>

@@ -59,7 +59,7 @@ create table `household_movement_address`
 (
     `household_serial_number`    int(11)      not null,
     `house_movement_report_date` date         not null,
-    house_movement_address``     varchar(500) not null,
+    `house_movement_address`     varchar(500) not null,
     `last_address_yn`            varchar(1)   default 'Y' not null,
     primary key (`household_serial_number`, `house_movement_report_date`)
 );
@@ -98,7 +98,7 @@ commit;
 
 -- 4. birth_death_report_resident 테이블 데이터 추가
 insert into `birth_death_report_resident` values (7, '출생', 4, '20120317', '부', null, 'nam@nhnad.co.kr', '010-1234-5678');
-insert into `birth_death_report_resident` values (1, '사망', 2, '20200502', '비동거친족', null, null, '010-2345-6789');
+insert into `birth_death_report_resident` values (1, '사망', 2, '20200502', null, '비동거친족', null, '010-2345-6789');
 
 commit;
 

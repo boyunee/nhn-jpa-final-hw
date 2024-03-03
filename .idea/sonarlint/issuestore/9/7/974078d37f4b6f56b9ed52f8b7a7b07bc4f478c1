@@ -1,7 +1,8 @@
 
+z	java:S116="^Rename this field "FamilyRelationships" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œì»Ù8¢ç¤îß1
 j
-java:S1128"MRemove this unused import 'org.springframework.data.jpa.repository.Temporal'.(‰£õÍ8âƒŸ§ß1
+java:S1128"MRemove this unused import 'org.springframework.data.jpa.repository.Temporal'.(‰£õÍ8¾ç¤îß1
 U
-java:S1128	"8Remove this unused import 'java.rmi.UnmarshalException'.(÷îÒ–8åƒŸ§ß1
+java:S1128	"8Remove this unused import 'java.rmi.UnmarshalException'.(÷îÒ–8¿ç¤îß1
 H
-java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8åƒŸ§ß1
+java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8¿ç¤îß1

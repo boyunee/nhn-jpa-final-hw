@@ -10,23 +10,27 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @IdClass(FamilyRelationship.Pk.class)
-@Table(name = "famil_relationship")
+@Table(name = "family_relationship")
 public class FamilyRelationship {
 
     @Id
-    @Column(name = "base_resident_serial_number")
+    @Column(name = "base_resident_serial_number", insertable = false, updatable = false)
     private Integer baseResidentSerialNumber;
 
     @Id
-    @Column(name = "family_resident_serial_number")
+    @Column(name = "family_resident_serial_number", insertable = false, updatable = false)
     private Integer familyResidentSerialNumber;
 
     @Column(name = "family_relationship_code", nullable = false)
     private String familyRelationshipCode;
 
     @ManyToOne
-    @JoinColumn(name = "resident_serial_number")
-    private Resident resident;
+    @JoinColumn(name = "base_resident_serial_number", referencedColumnName = "resident_serial_number")
+    private Resident baseResident;
+
+    @ManyToOne
+    @JoinColumn(name = "family_resident_serial_number", referencedColumnName = "resident_serial_number")
+    private Resident familyResident;
 
     @NoArgsConstructor
     @AllArgsConstructor
